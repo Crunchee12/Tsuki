@@ -1,1 +1,104 @@
-#HAHAHAHAHAHAHAHAHAHAHAHA
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ParSu Dormitory Online Booking</title>
+  <link rel="stylesheet" href="Homepage.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" id="homeLink">Home</a></li>
+        <li><a href="#" id="termsLink">Terms & Conditions</a></li>
+        <li><a href="#" id="feedbackLink">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="active">
+      <h1>Welcome to ParSu Dormitory Online Booking</h1>
+      <p>Find your perfect room with us!</p>
+      <br />
+      <button class="book-now-btn" id="bookNowBtn">Book Now</button>
+    </section>
+
+    <section id="terms" class="hidden">
+      <h2>Terms and Conditions</h2>
+      <p>
+        Welcome to ParSu Dormitory Online Booking. By accessing and using our
+        website, you agree to comply with these terms and conditions. These
+        terms govern your use of our website, including all content, services,
+        and functionalities offered. If you do not agree with any part of these
+        terms, please do not use our website.
+        <br />
+        We reserve the right to modify these terms and conditions at any time
+        without prior notice. It is your responsibility to review these terms
+        periodically for any changes. Continued use of our website after any
+        such changes constitutes your acceptance of the new terms. These terms
+        also govern your booking and stay with ParSu Dormitory. Please make sure
+        to read all sections carefully.
+      </p>
+    </section>
+
+    <section id="feedback" class="hidden">
+      <h2>Feedback</h2>
+      <form id="feedbackForm">
+        <textarea
+          id="feedbackText"
+          placeholder="Share your thoughts and suggestions to help us improve!"
+        ></textarea>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const homeLink = document.getElementById('homeLink');
+      const termsLink = document.getElementById('termsLink');
+      const feedbackLink = document.getElementById('feedbackLink');
+      const bookNowBtn = document.getElementById('bookNowBtn');
+
+      const homeSection = document.getElementById('home');
+      const termsSection = document.getElementById('terms');
+      const feedbackSection = document.getElementById('feedback');
+
+      function showSection(section) {
+        homeSection.classList.add('hidden');
+        termsSection.classList.add('hidden');
+        feedbackSection.classList.add('hidden');
+
+        section.classList.remove('hidden');
+      }
+
+      homeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection(homeSection);
+      });
+
+      termsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection(termsSection);
+      });
+
+      feedbackLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection(feedbackSection);
+      });
+
+      if (bookNowBtn) {
+        bookNowBtn.addEventListener('click', () => {
+          window.location.href = 'Parsu.html';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+
